@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML RAG Q&A</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ML Research Paper QA</h1>
+        <form method="post">
+            <textarea name="question" placeholder="Ask a question..." required>{{ question }}</textarea><br>
+            <button type="submit">Get Answer</button>
+        </form>
+        {% if answer %}
+            <div class="answer">
+                <h2>Answer:</h2>
+                <p>{{ answer }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
